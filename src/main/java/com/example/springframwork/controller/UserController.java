@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -76,8 +78,10 @@ public class UserController {
         }
     }
 
+
     @GetMapping("/viewUser")
     public String view(int id, Model model, HttpSession session) {
+
         User byOneUser = userService.getByOneUser(id);
         log.error(byOneUser.getName());
         model.addAttribute("user", byOneUser);
