@@ -34,12 +34,13 @@ public class UserController {
         this.messages = messages;
     }
 
-    @InitBinder
-    public void initBinder(WebDataBinder dataBinder) {
-        // setAllowedFields 메서드는 설정한 필드 외의 HTTP 파라미터가 오면 바인딩에서 제외된다.
-        // 지금은 email 만 변경할 수 있다.
-        dataBinder.setAllowedFields("email");
-    }
+//    @InitBinder
+//    public void initBinder(WebDataBinder dataBinder) {
+//        // setAllowedFields 메서드는 설정한 필드 외의 HTTP 파라미터가 오면 바인딩에서 제외된다.
+//        // 지금은 email 만 변경할 수 있다.
+//        // 이거하면 회원가입에서 문제 일어난다. 왜냐하면 모든 Post 에서 email 만 허용했기 때문에
+//        dataBinder.setAllowedFields("email");
+//    }
 
     @GetMapping("/")
     public String userList(Model model) {
