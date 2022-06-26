@@ -24,11 +24,12 @@ public class UserService {
 
 
     public void add(User user) {
-        checkNullValue(user);
+        checkEmptyValue(user);
         userDao.add(user);
     }
 
-    public void checkNullValue(User user) {
+    public void checkEmptyValue(User user) {
+        // 이렇게 해야하나?
         if (user.getEmail().equals("") || user.getName().equals("")) {
             throw new NotNullParameterException();
         }
@@ -44,14 +45,13 @@ public class UserService {
     }
 
     public void userUpdate(User user) {
-        // 여기서 업데이트를 하는데, email만 들어왔을 경우에는 업데이트는 email만
-        //
         User modifiedUser = validateEmptyParameter(user);
         userDao.update(modifiedUser);
     }
 
     private User validateEmptyParameter(User user) {
         User defaultUser = this.getByOneUser(user.getId());
+        // 이렇게 해야하나?
         if (user.getEmail() == null || user.getEmail().equals("")) {
             user.setEmail(defaultUser.getEmail());
         } else if (user.getName() == null || user.getName().equals("")) {
