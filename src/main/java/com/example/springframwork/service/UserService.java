@@ -3,8 +3,7 @@ package com.example.springframwork.service;
 
 import com.example.springframwork.dao.User;
 import com.example.springframwork.dao.UserDao;
-import com.example.springframwork.exception.NotNullParameterException;
-import org.apache.juli.logging.Log;
+import com.example.springframwork.exception.NotEmptyParameterException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -31,7 +30,7 @@ public class UserService {
     public void checkEmptyValue(User user) {
         // 이렇게 해야하나?
         if (user.getEmail().equals("") || user.getName().equals("")) {
-            throw new NotNullParameterException();
+            throw new NotEmptyParameterException();
         }
     }
 

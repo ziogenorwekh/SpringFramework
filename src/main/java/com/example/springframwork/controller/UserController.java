@@ -1,16 +1,13 @@
 package com.example.springframwork.controller;
 
 import com.example.springframwork.dao.User;
-import com.example.springframwork.exception.NotNullParameterException;
+import com.example.springframwork.exception.NotEmptyParameterException;
 import com.example.springframwork.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -71,7 +68,7 @@ public class UserController {
             // 불필요한 세션은 지워줘야 합니다.
             sessionStatus.setComplete();
             return userList(model);
-        } catch (NotNullParameterException e) {
+        } catch (NotEmptyParameterException e) {
             attributes.addFlashAttribute("message",
                     messages.getMessage("signup.failure", null, Locale.getDefault()));
             model.addAttribute("userInfo", user);
