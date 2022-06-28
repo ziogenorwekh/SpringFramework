@@ -12,6 +12,12 @@
 </head>
 <body>
 <h1>Using thymeleaf, Jpa</h1>
+<a href="/login">로그인</a>
+<a href="/logout">로그아웃</a>
+<h2>환영합니다. <!--/*@thymesVar id="name" type="com.example.springframwork.controller.MemberController"*/-->
+<div th:if="${session.me != null}">
+    <div th:text="${session.me.name}"></div>
+</div> 님</h2>
 <div class="grid">
     <div>아이디</div>
     <div>이름</div>

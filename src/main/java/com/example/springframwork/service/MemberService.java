@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class MemberService {
 
-    final MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     @Autowired
     public MemberService(MemberRepository memberRepository) {
@@ -33,4 +33,18 @@ public class MemberService {
     public List<Member> findAll() {
         return memberRepository.findAll();
     }
+
+    public Member login(String name) {
+        Member memberByName = this.findMemberByName(name);
+        validateExistMember(memberByName);
+        return memberByName;
+    }
+
+    private void validateExistMember(Member memberByName) {
+        if (memberByName == null) {
+            throw new NullPointerException();
+        }
+    }
+
+
 }
