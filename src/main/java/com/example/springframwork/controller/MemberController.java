@@ -75,7 +75,6 @@ public class MemberController {
             log.error(e.getLocalizedMessage() + ", 멤버가 없음!");
             attributes.addFlashAttribute("loginError", true);
             attributes.addFlashAttribute("errorName", name);
-            session.setAttribute("error",name);
             return "redirect:/login";
         }
     }

@@ -7,12 +7,11 @@
 <body>
 
 <form action="/login" method="post">
-    이름 : <!--/*@thymesVar id="failLogin" type="com.example.springframwork.controller.MemberController"*/-->
-    <input type="text" id="name" name="name" th:value="${errorName}"><br/>
+    이름 : <input type="text" id="name" name="name" th:value="${errorName}"><br/>
     <input type="submit" value="로그인">
 </form>
 <!--/*@thymesVar id="loginError" type="com.example.springframwork.controller.MemberController"*/-->
-<div th:if="${loginError}" th:text="#{login.error}"></div>
+<div th:if="${loginError}" th:text="#{login.error}" style="color: red"></div>
 
 </body>
 </html>
