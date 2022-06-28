@@ -17,7 +17,7 @@
     <div>이름</div>
     <div>이메일</div>
 </div>
-<!--        /*@thymesVar id="member" type="com.example.springframwork.dao.Member"*/-->
+<!--        /*@thymesVar id="member" type="com.example.springframwork.dto.Member"*/-->
     <div th:each="member : ${members}" class="grid">
         <div th:text="${member.id}"></div>
         <div th:text="${member.name}"></div>

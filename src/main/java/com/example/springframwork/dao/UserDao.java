@@ -1,6 +1,7 @@
 package com.example.springframwork.dao;
 
-import javax.sql.DataSource;
+import com.example.springframwork.dto.User;
+
 import java.util.List;
 
 public interface UserDao {

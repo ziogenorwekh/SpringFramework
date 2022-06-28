@@ -1,24 +1,16 @@
 package com.example.springframwork.dao;
 
-import ch.qos.logback.classic.Level;
-import com.example.springframwork.exception.DuplicateUserIdException;
+import com.example.springframwork.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 
 @Repository
 // Dao는 데이터를 어떻게 가져오고 조작할지를 다루는 곳이지 비지니스 로직을 두는 곳이 아니다.
 public class UserDaoJdbc implements UserDao {
-
-
 
     JdbcTemplate jdbcTemplate;
 

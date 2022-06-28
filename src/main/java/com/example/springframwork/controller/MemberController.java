@@ -1,7 +1,7 @@
 package com.example.springframwork.controller;
 
 
-import com.example.springframwork.dao.Member;
+import com.example.springframwork.dto.Member;
 import com.example.springframwork.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

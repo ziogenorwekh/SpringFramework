@@ -1,7 +1,7 @@
 package com.example.springframwork;
 
 
-import com.example.springframwork.dao.User;
+import com.example.springframwork.dto.User;
 import com.example.springframwork.dao.UserDao;
 import com.example.springframwork.service.UserService;
 import lombok.extern.slf4j.Slf4j;

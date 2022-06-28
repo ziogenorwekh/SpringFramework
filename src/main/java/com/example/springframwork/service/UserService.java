@@ -1,7 +1,7 @@
 package com.example.springframwork.service;
 
 
-import com.example.springframwork.dao.User;
+import com.example.springframwork.dto.User;
 import com.example.springframwork.dao.UserDao;
 import com.example.springframwork.exception.NotEmptyParameterException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,11 +44,11 @@ public class UserService {
     }
 
     public void userUpdate(User user) {
-        User modifiedUser = validateEmptyParameter(user);
+        User modifiedUser = validateCheckEmptyParameter(user);
         userDao.update(modifiedUser);
     }
 
-    private User validateEmptyParameter(User user) {
+    private User validateCheckEmptyParameter(User user) {
         User defaultUser = this.getByOneUser(user.getId());
         // 이렇게 해야하나?
         if (user.getEmail() == null || user.getEmail().equals("")) {

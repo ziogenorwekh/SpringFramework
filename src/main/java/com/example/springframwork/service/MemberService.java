@@ -1,13 +1,12 @@
 package com.example.springframwork.service;
 
 
-import com.example.springframwork.dao.Member;
+import com.example.springframwork.dto.Member;
 import com.example.springframwork.dao.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MemberService {

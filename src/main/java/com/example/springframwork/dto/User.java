@@ -1,4 +1,4 @@
-package com.example.springframwork.dao;
+package com.example.springframwork.dto;
 
 
 public class User {
