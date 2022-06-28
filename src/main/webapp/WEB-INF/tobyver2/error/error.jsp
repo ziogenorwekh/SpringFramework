@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-에러났대요
+Error except for 500
 ${pageContext.exception.message}
 </body>
 </html>
